@@ -14,5 +14,4 @@ source_if_exists $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history
 
 precmd() {
     source ~/.config/zsh/aliases.zsh
-    source ~/.config/zsh/exports.zsh
 }

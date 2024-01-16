@@ -22,7 +22,7 @@ _darcs
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
 
-\Brewfile
+\Brewfile.lock.json
 
 ^/README.*
 ^/LICENSE.*

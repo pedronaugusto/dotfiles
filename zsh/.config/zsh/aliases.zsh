@@ -17,7 +17,6 @@ alias ls=exa
 alias sl=exa
 alias c='clear'
 alias s='source ~/.zshrc'
-alias rm=trash
 
 # GIT ALIASES -----------------------------------------------------------------
 alias gc='git commit'
