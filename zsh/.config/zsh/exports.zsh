@@ -1,11 +1,11 @@
 export EDITOR="nvim"
 export TERMINAL="wezterm"
-export BROWSER="safari"
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.docker/bin":$PATH
-export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="$HOME/fvm/default/bin":$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 
+export CHROME_EXECUTABLE="/Applications/Arc.app/Contents/MacOS/Arc"
 
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
