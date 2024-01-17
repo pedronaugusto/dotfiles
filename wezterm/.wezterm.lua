@@ -8,7 +8,7 @@ return {
 	font_size = 16.0,
 	macos_window_background_blur = 20,
 
-	window_background_opacity = 0.97,
+	window_background_opacity = 0.95,
 	window_decorations = "RESIZE",
 	keys = {
 		{
