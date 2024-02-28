@@ -130,7 +130,7 @@ wezterm.on("update-status", function(window, pane)
     elseif charge >= 35 and charge < 65 then
       charge_icon = wezterm.nerdfonts.fa_battery_half
     elseif charge >= 15 and charge < 35 then
-      charge_icon = wezterm.nerdfonts.fa_battery_one_quarter
+      charge_icon = wezterm.nerdfonts.fa_battery_quarter
     elseif charge >= 0 and charge < 15 then
       charge_icon = wezterm.nerdfonts.fa_battery_one_empty
     end
