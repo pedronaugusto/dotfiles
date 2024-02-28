@@ -10,8 +10,6 @@ alias v='nvim "$@"'
 alias vi='nvim "$@"'
 alias vim='nvim "$@"'
 
-alias ta='tmux attach -t'
-
 alias l='eza -lah'
 alias ls=eza
 alias sl=eza

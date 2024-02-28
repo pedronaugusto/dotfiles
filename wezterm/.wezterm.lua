@@ -117,17 +117,26 @@ wezterm.on("update-status", function(window, pane)
     stat_color = "#fab387"
   end
 
-  -- Current working directory
-  local basename = function(s)
-    -- Nothing a little regex can't fix
-    return string.gsub(s, "(.*[/\\])(.*)", "%2")
+  -- Battery
+  local bat = ''
+  local charge_icon = ''
+  local charge = 0
+  for _, b in ipairs(wezterm.battery_info()) do
+    charge = b.state_of_charge * 100
+    if charge >= 90 then
+      charge_icon = wezterm.nerdfonts.fa_battery_full
+    elseif charge >= 65 and charge < 90 then
+      charge_icon = wezterm.nerdfonts.fa_battery_three_quarters
+    elseif charge >= 35 and charge < 65 then
+      charge_icon = wezterm.nerdfonts.fa_battery_half
+    elseif charge >= 15 and charge < 35 then
+      charge_icon = wezterm.nerdfonts.fa_battery_one_quarter
+    elseif charge >= 0 and charge < 15 then
+      charge_icon = wezterm.nerdfonts.fa_battery_one_empty
+    end
   end
-  -- CWD and CMD could be nil (e.g. viewing log using Ctrl-Alt-l). Not a big deal, but check in case
-  local cwd = pane:get_current_working_dir()
-  cwd = cwd and basename(cwd) or ""
-  -- Current command
-  local cmd = pane:get_foreground_process_name()
-  cmd = cmd and basename(cmd) or ""
+
+  bat = string.format('%.0f%%', charge)
 
   -- Time
   local time = wezterm.strftime("%H:%M")
@@ -142,14 +151,12 @@ wezterm.on("update-status", function(window, pane)
 
   -- Right status
   window:set_right_status(wezterm.format({
-    -- Wezterm has a built-in nerd fonts
-    -- https://wezfurlong.org/wezterm/config/lua/wezterm/nerdfonts.html
-    { Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
+
+    { Foreground = { Color = stat_color } },
+    { Text =  charge_icon .. "  " .. bat },
     { Text = " | " },
-    { Foreground = { Color = "#f9e2af" } },
-    { Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
-    "ResetAttributes",
-    { Text = " | " },
+
+    { Foreground = { Color = stat_color } },
     { Text = wezterm.nerdfonts.md_clock .. "  " .. time },
     { Text = "  " },
   }))
