@@ -1,0 +1,11 @@
+{
+    "modifiers": ["cmd", "shift"],
+    "hotkeys": {
+        "C": "Visual Studio Code",
+        "D": "Discord",
+        "M": "Spotify",
+        "S": "Safari",
+        "T": "Wezterm",
+        "U": "UnrealEditor"
+    }  
+}

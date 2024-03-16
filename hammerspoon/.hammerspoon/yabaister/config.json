@@ -1,0 +1,39 @@
+[
+    {
+        "modifiers": ["alt"],
+        "hotkeys": {
+            "h": "window --focus west",
+            "j": "window --focus south",
+            "k": "window --focus north",
+            "l": "window --focus east",
+            "x": "window --focus recent",
+
+            "r": "space --rotate 90",
+            "y": "space --mirror y-axis",
+            "a": "space --toggle padding --toggle gap",
+
+            "d": "window --toggle zoom-parent",
+            "f": "window --toggle zoom-fullscreen",
+            "e": "window --toggle split",
+            "t": "window --toggle float --grid 4:4:1:1:2:2"
+        }
+    },
+    {
+        "modifiers": ["alt", "shift"],
+        "hotkeys": {
+            "h": "window --swap west",
+            "j": "window --swap south",
+            "k": "window --swap north",
+            "l": "window --swap east",
+            "x": "window --swap recent",
+
+            "f": "window --toggle native-fullscreen",
+            "0": "space --balance",
+
+            "a": "window --resize left:-20:0",
+            "s": "window --resize bottom:0:20",
+            "w": "window --resize top:0:-20",
+            "d": "window --resize right:20:0"
+        }
+    }
+]
