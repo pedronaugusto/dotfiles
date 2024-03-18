@@ -4,9 +4,11 @@ local function yabai(command)
 end
 
 local config = hs.json.read("yabaister/config.json")
+
 for _, object in ipairs(config) do
     local modifiers = object.modifiers
     local hotkeys = object.hotkeys
+
     for key, command in pairs(hotkeys) do
         hs.hotkey.bind(modifiers, key, function()
             yabai(command)

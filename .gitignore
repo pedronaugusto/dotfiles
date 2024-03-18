@@ -1,4 +1,6 @@
 .env
 Brewfile.lock.json
+**/Spoons/*
+!**/Spoons/SpoonInstall.spoon
 
 .DS_Store

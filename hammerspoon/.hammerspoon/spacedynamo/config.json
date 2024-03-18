@@ -1,0 +1,10 @@
+{
+    "switchmodifiers": ["ctrl"],
+    "movemodifiers": ["ctrl", "alt"],
+    "hotkeys": {
+        "left": "h",
+        "right": "l",
+        "create": "c",
+        "delete": "d"
+    }
+}

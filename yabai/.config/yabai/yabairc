@@ -2,10 +2,12 @@
  
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Hammerspoon$" manage=off
 
 # global settings
 yabai -m config                              \
+    mouse_follows_focus         on           \
+    focus_follows_mouse         autoraise    \
+    auto_balance                on           \
     window_placement            second_child \
     top_padding                 15           \
     left_padding                15           \

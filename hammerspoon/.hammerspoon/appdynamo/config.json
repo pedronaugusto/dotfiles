@@ -1,11 +1,13 @@
 {
-    "modifiers": ["cmd", "shift"],
+    "leadermodifier": "alt",
+    "leaderkey": "space",
     "hotkeys": {
-        "C": "Visual Studio Code",
-        "D": "Discord",
-        "M": "Spotify",
-        "S": "Safari",
-        "T": "Wezterm",
-        "U": "UnrealEditor"
+        "c": "Visual Studio Code",
+        "d": "Discord",
+        "m": "Spotify",
+        "n": "Notion",
+        "s": "Safari",
+        "t": "Wezterm",
+        "u": "UnrealEditor"
     }  
 }

@@ -1,3 +1,4 @@
+-- Function to open an application
 local function open_app(name)
     hs.application.launchOrFocus(name)
     if name == 'Finder' then
@@ -5,11 +6,17 @@ local function open_app(name)
     end
 end
 
+-- Read the config file
 local config = hs.json.read("appdynamo/config.json")
-local modifiers = config.modifiers
+
+local leadermodifier = config.leadermodifier
+local leaderkey = config.leaderkey
 local hotkeys = config.hotkeys
-for key, app in pairs(hotkeys) do
-    hs.hotkey.bind(modifiers, key, function()
-        open_app(app)
-    end)
+
+-- Create a key map for hotkeys
+local keymap = {}
+for key, app in pairs(hotkeys) do    keymap[singleKey(key, app)] = function() open_app(app) end
 end
+
+-- Bind the hotkeys
+hs.hotkey.bind({leadermodifier}, leaderkey, spoon.RecursiveBinder.recursiveBind(keymap))
