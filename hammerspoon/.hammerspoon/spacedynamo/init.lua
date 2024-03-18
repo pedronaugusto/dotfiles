@@ -104,3 +104,13 @@ hs.hotkey.bind(movemodifiers, hotkeys.delete, function()
     local previousIndex, _ = getAdjacentSpaces()
     deleteSpace(previousIndex)
 end)
+
+-- Bind hotkey for deleting the current space
+hs.hotkey.bind(switchmodifiers, hotkeys.mc, function()
+    hs.spaces.toggleMissionControl()
+end)
+
+    -- Bind hotkey for deleting the current space
+hs.hotkey.bind(switchmodifiers, hotkeys.expose, function()
+    hs.spaces.toggleAppExpose()
+end)

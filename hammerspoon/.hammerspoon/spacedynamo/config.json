@@ -5,6 +5,8 @@
         "left": "h",
         "right": "l",
         "create": "c",
-        "delete": "d"
+        "delete": "d",
+        "mc": "k",
+        "expose": "j"
     }
 }
