@@ -5,9 +5,6 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-	-- add gruvbox
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-
 	-- add telescope-fzf-native
 	{
 		"telescope.nvim",
