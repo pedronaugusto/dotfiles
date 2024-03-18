@@ -7,11 +7,6 @@
 xcode-select --install
 ~~~
 
-* [ ] install Brew
-~~~
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-~~~
-
 * [ ] clone this repo to the home directory and cd into it
 ~~~
 cd ~/dotfiles/
