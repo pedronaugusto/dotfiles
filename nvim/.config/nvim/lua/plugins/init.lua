@@ -50,36 +50,13 @@ return {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio"
     },
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end
   },
   
   {
     "mfussenegger/nvim-dap",
     config = function()
-      local dap = require('dap')
-
-      -- Customize adapter for Unreal Engine debugging via LLDB
-      dap.adapters.lldb = {
-          type = 'executable',
-          command = '/opt/homebrew/opt/llvm/bin/lldb-vscode',
-          name = "lldb"
-      }
-
-      dap.configurations.cpp = require('dap.ext.vscode').load_launchjs()
-    end,
+      require('configs.dap').setup()
+    end
   }
 
 
