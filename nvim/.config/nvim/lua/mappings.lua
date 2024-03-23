@@ -12,4 +12,4 @@ map("i", "jk", "<ESC>")
 map("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true, desc = "Toggle breakpoint" })
 
 -- Start/Continue debugging with <F5>
-map("n", "<F5>", function() require('configs.dap').runPreLaunchTaskAndDebug() end, { silent = true, desc = "Start/Continue Debugging" })
+map("n", "<F5>", function() require('configs.dap').run_pre_launch_task_and_debug() end, { silent = true, desc = "Start/Continue Debugging" })
