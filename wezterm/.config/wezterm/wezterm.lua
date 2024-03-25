@@ -7,7 +7,8 @@ if wezterm.config_builder then
 end
 
 -- General Configuration
-config.color_scheme = 'rose-pine'
+config.color_scheme = 'Catppuccin Mocha'
+config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 16.0
 config.macos_window_background_blur = 30
 config.window_background_opacity = 0.97
@@ -21,38 +22,38 @@ config.window_padding = {
 }
 config.window_frame = {
 	font_size = 16.0,
-	font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
-	active_titlebar_bg = "rgba(25, 23, 36,0.97)",
-	inactive_titlebar_bg = "rgba(25, 23, 36,0.97)",
+	font = wezterm.font({ family = "JetBrains Mono"}),
+	active_titlebar_bg = "rgba(30, 30, 46,0.97)",
+	inactive_titlebar_bg = "rgba(30, 30, 46,0.97)",
 }
 config.colors = {
 	tab_bar = {
-		background = "rgba(25, 23, 36,0.97)",
-		inactive_tab_edge = "rgba(25, 23, 36,0.97)",
+		background = "rgba(30, 30, 46,0.97)",
+		inactive_tab_edge = "rgba(30, 30, 46,0.97)",
 		active_tab = {
-			bg_color = "rgba(25, 23, 36,0.97)",
-			fg_color = "#ebbcba",
+			bg_color = "rgba(30, 30, 46,0.97)",
+			fg_color = "#fab387",
 		},
 		inactive_tab = {
-			bg_color = "rgba(25, 23, 36,0.97)",
-			fg_color = "#6e6a86",
+			bg_color = "rgba(30, 30, 46,0.97)",
+			fg_color = "#a6adc8",
 		},
 		inactive_tab_hover = {
-			bg_color = "rgba(25, 23, 36,0.97)",
-			fg_color = "#9ccfd8",
+			bg_color = "rgba(30, 30, 46,0.97)",
+			fg_color = "#74c7ec",
 			italic = true,
 		},
 		new_tab = {
-			bg_color = "rgba(25, 23, 36,0.97)",
-			fg_color = "#6e6a86",
+			bg_color = "rgba(30, 30, 46,0.97)",
+			fg_color = "#a6adc8",
 		},
 		new_tab_hover = {
-			bg_color = "rgba(25, 23, 36,0.97)",
-			fg_color = "#9ccfd8",
+			bg_color = "rgba(30, 30, 46,0.97)",
+			fg_color = "#74c7ec",
 			italic = true,
 		},
 	},
-	split = "#ebbcba",
+	split = "#fab387",
 }
 config.inactive_pane_hsb = {
 	saturation = 1,

@@ -3,7 +3,7 @@ return {
   require "plugins.formatting",
   require "plugins.dap",
   require "plugins.copilot",  
-  require "plugins.extras"
+  require "plugins.extras",
 
   --
   -- {

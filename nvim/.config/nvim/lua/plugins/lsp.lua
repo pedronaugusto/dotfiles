@@ -3,7 +3,7 @@ return{
         "neovim/nvim-lspconfig",
         config = function()
           require("nvchad.configs.lspconfig").defaults()
-          require "configs.lspconfig"
+          require "configs.lsp"
         end,
     },
 
@@ -12,8 +12,10 @@ return{
         opts = {
             ensure_installed = {
                 -- cpp
+                "clang-format",
                 "clangd",
                 --python
+                "flake8",
                 "isort",
                 "black",
                 "pyright",
