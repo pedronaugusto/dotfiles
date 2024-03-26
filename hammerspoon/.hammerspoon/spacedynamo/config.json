@@ -1,12 +1,12 @@
 {
-    "switchmodifiers": ["ctrl"],
+    "switchmodifiers": ["alt"],
     "movemodifiers": ["ctrl", "alt"],
     "hotkeys": {
-        "left": "h",
-        "right": "l",
+        "left": "left",
+        "right": "right",
         "create": "c",
         "delete": "d",
-        "mc": "k",
-        "expose": "j"
+        "mc": "up",
+        "expose": "down"
     }
 }

@@ -86,10 +86,8 @@ symbol = " "
 symbol = " "
 
 [custom.ue]
-command = 'cat *.uproject | jq -r ".EngineAssociation"'
 detect_extensions = ['uproject']
-format = '[via ](bold white)[󰦱 $output](bold yellow) '
-shell = "bash" 
+format = '[via ](bold white)[󰦱 ](bold yellow) '
 
 [os.symbols]
 Alpaquita = " "
