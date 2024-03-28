@@ -6,6 +6,35 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+local direction_keys = {
+	h = 'Left',
+	j = 'Down',
+	k = 'Up',
+	l = 'Right',
+}
+
+local function is_vim(pane)
+	-- this is set by the plugin, and unset on ExitPre in Neovim
+	return pane:get_user_vars().IS_NVIM == 'true'
+end
+
+local function split_nav(resize_or_move, key)
+  return wezterm.action_callback(function(win, pane)
+      if is_vim(pane) then
+        -- pass the keys through to vim/nvim
+        win:perform_action({
+          SendKey = { key = key, mods = resize_or_move == 'resize' and 'META' or 'CTRL' },
+        }, pane)
+      else
+        if resize_or_move == 'resize' then
+          win:perform_action({ AdjustPaneSize = { direction_keys[key], 10 } }, pane)
+        else
+          win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+        end
+      end
+    end)
+end
+
 -- General Configuration
 config.color_scheme = 'Catppuccin Mocha'
 config.font = wezterm.font 'JetBrains Mono'
@@ -68,10 +97,14 @@ config.keys = {
 	{ key = "phys:Space", mods = "LEADER", action = act.ActivateCommandPalette },
 	{ key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "=", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "LEADER", action = split_nav('move', 'h') },
+	{ key = "j", mods = "LEADER", action = split_nav('move', 'j') },
+	{ key = "k", mods = "LEADER", action = split_nav('move', 'k') },
+	{ key = "l", mods = "LEADER", action = split_nav('move', 'l') },
+	{ key = "h", mods = "CTRL", action = split_nav('move', 'h') },
+	{ key = "j", mods = "CTRL", action = split_nav('move', 'j') },
+	{ key = "k", mods = "CTRL", action = split_nav('move', 'k') },
+	{ key = "l", mods = "CTRL", action = split_nav('move', 'l') },
 	{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 	{ key = "o", mods = "LEADER", action = act.RotatePanes("Clockwise") },
@@ -115,13 +148,16 @@ end
 -- Key Tables
 config.key_tables = {
 	resize_pane = {
-		{ key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
-		{ key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
-		{ key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
-		{ key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
+		{ key = "h", action = split_nav('resize', 'h') },
+		{ key = "j", action = split_nav('resize', 'j') },
+		{ key = "k", action = split_nav('resize', 'k') },
+		{ key = "l", action = split_nav('resize', 'l') },
 		{ key = "Escape", action = "PopKeyTable" },
 		{ key = "Enter", action = "PopKeyTable" },
 	},
 }
 
+
+
 return config
+
