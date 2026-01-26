@@ -2,3 +2,4 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle install --file=brew/Brewfile
 stow */
+

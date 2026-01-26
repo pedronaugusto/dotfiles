@@ -15,3 +15,9 @@ source_if_exists $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history
 precmd() {
     source ~/.config/zsh/aliases.zsh
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gusto/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gusto/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gusto/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gusto/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

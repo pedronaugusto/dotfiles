@@ -14,11 +14,13 @@ CVS
 
 \.svn
 _darcs
-\.hg
+\.hgw
 
 \.git
 \.gitignore
 \.DS_Store
+
+\install_sketchybar.sh
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
