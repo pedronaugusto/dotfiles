@@ -31,8 +31,6 @@ brew "oven-sh/bun/bun"
 
 cask "docker"
 cask "discord"
-cask "epic-games"
-cask "steam"
 cask "nikitabobko/tap/aerospace"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-mono"
