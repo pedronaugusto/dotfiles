@@ -18,9 +18,13 @@ _darcs
 
 \.git
 \.gitignore
-\.DS_Store
-
+# macOS junk files
+(^|/)\.DS_Store$
+(^|/)\.localized$
+(^|/)\.Spotlight-V100$
+(^|/)\.Trashes$
 \install_sketchybar.sh
+\bootstrap.sh
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files

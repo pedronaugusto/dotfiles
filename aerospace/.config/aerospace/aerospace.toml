@@ -1,18 +1,3 @@
-after-startup-command = ['exec-and-forget sketchybar']
-
-# Notify Sketchybar about workspace change
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE FOCUSED_DISPLAY=$(aerospace list-monitors --focused | awk "{print $1}")',
-]
-
-# Notify Sketchybar about focus change
-# See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-on-focus-changed = [
-  'exec-and-forget sketchybar --trigger aerospace_focus_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-]
-
 # Start AeroSpace at login
 start-at-login = true
 
@@ -75,15 +60,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 20
-inner.vertical =   20
-outer.left =       20
-outer.bottom =     20
-outer.top = [
-  { monitor."Odyssey G85SB" = 80 },
-  45,
-]
-outer.right =      20
+inner.horizontal = 14
+inner.vertical =   14
+outer.left =       14
+outer.bottom =     14
+outer.top =        14
+outer.right =      14
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
